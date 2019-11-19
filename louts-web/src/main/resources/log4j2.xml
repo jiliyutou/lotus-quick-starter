@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="300">
+
+    <Appenders>
+        <!-- 控制台输出 -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%-5level] %l - %msg%n" />
+        </Console>
+
+        <!-- 应用业务日志按日期回滚 -->
+        <RollingFile name="LOTUS-QUICK-STARTER-APPENDER" fileName="logs/lotus-quick-starter.log"
+                     filePattern="logs/lotus-quick-starter.log_%d{yyyy-MM-dd}">
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%-5level] %l - %msg%n" />
+        </RollingFile>
+
+        <!-- COMMON-ERROR 日志按日期回滚 -->
+        <RollingFile name="COMMON-ERROR" fileName="logs/common-error.log"
+                     filePattern="logs/common-error.log_%d{yyyy-MM-dd}">
+            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            <!-- 关键点在于filePattern后的日期格式，日期格式精确到哪一位，interval也精确到哪一个单位 -->
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%-5level] %l - %msg%n" />
+        </RollingFile>
+
+        <!-- COMMON-DEFAULT 日志按日期回滚 -->
+        <RollingFile name="COMMON-DEFAULT" fileName="logs/common-default.log"
+                     filePattern="logs/common-default.log_%d{yyyy-MM-dd}">
+            <!--只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <!--<SizeBasedTriggeringPolicy size="100MB"/>-->
+            </Policies>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%-5level] %l - %msg%n" />
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+        <!-- com.lotus包名下的日志都输出到LOTUS-SPRING-BOOT-APPENDER -->
+        <Logger name="com.lotus" level="info" additivity="false">
+            <AppenderRef ref="LOTUS-QUICK-STARTER-APPENDER" />
+        </Logger>
+
+        <Logger name="COMMON-ERROR-LOGGER" level="error" additivity="false">
+            <AppenderRef ref="COMMON-ERROR" />
+        </Logger>
+
+        <Root level="info">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="COMMON-ERROR" />
+            <AppenderRef ref="COMMON-DEFAULT" />
+        </Root>
+    </Loggers>
+</Configuration>

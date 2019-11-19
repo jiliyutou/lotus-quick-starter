@@ -1,0 +1,23 @@
+## 应用服务端口
+server:
+  port: 80
+
+## log4j2日志配置
+logging:
+  config: classpath:log4j2.xml
+
+## mysql configuration
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.96.14.56:3306/db_lotus?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: lotus
+    password: LOTUS_xjbmm
+    max-active: 10
+    max-idle: 5
+    min-idle: 0
+
+## mybatis configuration
+mybatis:
+  mapper-locations: classpath:/mybatis/*.xml,classpath:/mybatis/**/*.xml
+  type-aliases-package: com.lotus.core.entity
