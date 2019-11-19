@@ -43,6 +43,10 @@
         </dependency>
 
         <dependency>
+            <groupId>com.lotus</groupId>
+            <artifactId>lotus-orz</artifactId>
+        </dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>

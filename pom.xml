@@ -17,12 +17,16 @@
         <version>2.2.0.RELEASE</version>
     </parent>
 
+    <!-- 子模块 -->
     <modules>
         <module>lotus-orz</module>
         <module>louts-web</module>
     </modules>
 
+    <!-- 常量配置 -->
     <properties>
+        <lotus.orz.version>0.0.1-SNAPSHOT</lotus.orz.version>
+
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <mysql.dirver.version>5.1.34</mysql.dirver.version>
@@ -33,6 +37,13 @@
     <!-- 依赖管理 -->
     <dependencyManagement>
         <dependencies>
+            <!-- sub module -->
+            <dependency>
+                <groupId>com.lotus</groupId>
+                <artifactId>lotus-orz</artifactId>
+                <version>${lotus.orz.version}</version>
+            </dependency>
+
             <!-- mysql驱动依赖 -->
             <dependency>
                 <groupId>mysql</groupId>

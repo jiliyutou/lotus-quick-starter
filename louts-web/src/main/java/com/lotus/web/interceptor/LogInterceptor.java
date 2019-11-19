@@ -6,8 +6,7 @@
 
 package com.lotus.web.interceptor;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -22,9 +21,8 @@ import java.util.UUID;
  * @author haikuo.zhk
  */
 @Component
+@Slf4j
 public class LogInterceptor implements HandlerInterceptor {
-
-    private final static Logger LOGGER = LoggerFactory.getLogger(LogInterceptor.class);
 
     /** 拦截所有URI */
     private static final String URI_REGEX = "/.*";
@@ -41,7 +39,7 @@ public class LogInterceptor implements HandlerInterceptor {
             final String ip = request.getHeader("x-forwarded-for") == null ?
                     request.getRemoteAddr() : request.getHeader("x-forwarded-for");
 
-            LOGGER.info("requestStart - _uniqueId:{}, ip:{}, uri:{}, method:{}, queryString: {}",
+            log.info("requestStart - _uniqueId:{}, ip:{}, uri:{}, method:{}, queryString: {}",
                     requestId, ip,
                     request.getRequestURI(),
                     request.getMethod(),
@@ -56,9 +54,9 @@ public class LogInterceptor implements HandlerInterceptor {
         if (request.getRequestURI().matches(URI_REGEX)) {
             Long start = request.getAttribute("qh.start") == null ? 0L : (Long) request.getAttribute("qh.start");
 
-            LOGGER.info("requestEnd - _uniqueId:{}, took:{}, uri:{}, method:{}, queryString:{}",
+            log.info("requestEnd - _uniqueId:{}, took:{}, uri:{}, method:{}, queryString:{}",
                     request.getAttribute("_uniqueId"),
-                    start == 0 ? -1 : System.currentTimeMillis() - start,
+                    (start == 0) ? -1 : System.currentTimeMillis() - start,
                     request.getRequestURI(),
                     request.getMethod(),
                     request.getQueryString());

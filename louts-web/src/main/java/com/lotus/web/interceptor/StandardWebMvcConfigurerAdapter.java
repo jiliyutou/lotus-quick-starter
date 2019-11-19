@@ -17,7 +17,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * @author haikuo.zhk
  */
 @SpringBootConfiguration
-public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
+public class StandardWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
 
     @Autowired
     private LogInterceptor logInterceptor;
