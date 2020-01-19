@@ -1,0 +1,19 @@
+## 应用服务端口
+server:
+  port: 80
+
+## mysql configuration
+spring:
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:/workspace/lotus-quick-starter/lotus-example/sqlite.lotus.db
+    username:
+    password:
+    max-active: 10
+    max-idle: 5
+    min-idle: 0
+
+## mybatis configuration
+mybatis:
+  mapper-locations: classpath:/mybatis/*.xml,classpath:/mybatis/**/*.xml
+  type-aliases-package: com.lotus.example

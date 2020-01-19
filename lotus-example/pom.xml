@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.lotus</groupId>
-    <artifactId>louts-web</artifactId>
+    <artifactId>louts-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -47,51 +47,17 @@
             <artifactId>lotus-orz</artifactId>
         </dependency>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
-        <finalName>lotus-quick-starter</finalName>
-        <resources>
-            <resource>
-                <directory>${basedir}/src/main/resources</directory>
-                <excludes>
-                    <exclude>stage/**</exclude>
-                </excludes>
-                <targetPath>${basedir}/target/classes</targetPath>
-                <filtering>true</filtering>
-            </resource>
-            <resource>
-                <!-- Please provide -Dstage=dev/beta/prod/etc.. to get correct stage properties file
-                    included. -->
-                <directory>${basedir}/src/main/resources/stage/${stage}</directory>
-                <targetPath>${basedir}/target/classes</targetPath>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-
+        <finalName>lotus-example</finalName>
         <plugins>
             <!-- mvn assembly:assembly插件命令生成普通jar -->
             <plugin>
@@ -100,7 +66,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.lotus.web.Application</mainClass>
+                            <mainClass>com.lotus.example.ExampleApplication</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -120,23 +86,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <!-- Profile for maven package -P{id} -->
-    <profiles>
-        <profile>
-            <id>dev</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <stage>dev</stage>
-            </properties>
-        </profile>
-        <profile>
-            <id>prod</id>
-            <properties>
-                <stage>prod</stage>
-            </properties>
-        </profile>
-    </profiles>
 </project>

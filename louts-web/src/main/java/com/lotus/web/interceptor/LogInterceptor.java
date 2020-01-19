@@ -66,6 +66,6 @@ public class LogInterceptor implements HandlerInterceptor {
     @Override
     public void afterCompletion(final HttpServletRequest request, final HttpServletResponse response,
                                 final Object o, final Exception e) throws Exception {
-        // TODO: completion
+        // Add completion code here
     }
 }
