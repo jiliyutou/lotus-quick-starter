@@ -8,10 +8,10 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <!-- Inherit defaults from louts-quick-starter-parent -->
+    <!-- Inherit defaults from lotus-quick-starter-parent -->
     <parent>
         <groupId>com.lotus</groupId>
-        <artifactId>louts-quick-starter-parent</artifactId>
+        <artifactId>lotus-quick-starter-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 

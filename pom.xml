@@ -4,11 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.lotus</groupId>
-    <artifactId>louts-quick-starter-parent</artifactId>
+    <artifactId>lotus-quick-starter-parent</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>louts-quick-starter</name>
-    <description>Louts Quick Starter</description>
+    <name>lotus-quick-starter</name>
+    <description>Lotus Quick Starter</description>
 
     <parent>
         <!-- Inherit defaults from Spring Boot -->
@@ -20,7 +20,7 @@
     <!-- 子模块 -->
     <modules>
         <module>lotus-orz</module>
-        <module>louts-web</module>
+        <module>lotus-web</module>
         <module>lotus-example</module>
     </modules>
 
