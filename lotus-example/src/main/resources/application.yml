@@ -5,13 +5,17 @@ server:
 ## mysql configuration
 spring:
   datasource:
-    driver-class-name: org.sqlite.JDBC
-    url: jdbc:sqlite:/workspace/lotus-quick-starter/lotus-example/sqlite.lotus.db
-    username:
+    driver-class-name: @project.driver@
+    url: @project.url@
+    username: @project.username@
     password:
     max-active: 10
     max-idle: 5
     min-idle: 0
+
+  h2:
+    console:
+      enabled: true #开启web console功能
 
 ## mybatis configuration
 mybatis:
