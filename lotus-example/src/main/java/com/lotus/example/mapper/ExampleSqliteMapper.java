@@ -1,9 +1,15 @@
-package com.lotus.example;
+package com.lotus.example.mapper;
 
+import com.lotus.example.ExampleDO;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
+/**
+ * Mybatis - Sqlite  Mapper实现
+ *
+ * @author haikuo.zhk
+ */
 @Mapper
 public interface ExampleSqliteMapper extends ExampleMapper {
 

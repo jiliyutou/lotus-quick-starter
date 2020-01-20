@@ -8,14 +8,14 @@ spring:
     driver-class-name: @project.driver@
     url: @project.url@
     username: @project.username@
-    password:
+    password: @project.password@
     max-active: 10
     max-idle: 5
     min-idle: 0
 
-  h2:
-    console:
-      enabled: true #开启web console功能
+##  h2:
+##    console:
+##      enabled: true #开启WebConsole功能
 
 ## mybatis configuration
 mybatis:

@@ -102,6 +102,7 @@
                 <project.driver>org.h2.Driver</project.driver>
                 <project.url>jdbc:h2:D:/workspace/lotus-quick-starter/lotus-example/db_lotus</project.url>
                 <project.username>sa</project.username>
+                <project.password></project.password>
             </properties>
         </profile>
         <profile>
@@ -110,6 +111,7 @@
                 <project.driver>org.sqlite.JDBC</project.driver>
                 <project.url>jdbc:sqlite:/workspace/lotus-quick-starter/lotus-example/sqlite.lotus.db</project.url>
                 <project.username></project.username>
+                <project.password></project.password>
             </properties>
         </profile>
     </profiles>

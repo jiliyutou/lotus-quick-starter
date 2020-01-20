@@ -1,11 +1,17 @@
-package com.lotus.example;
+package com.lotus.example.mapper;
 
+import com.lotus.example.ExampleDO;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
+/**
+ * Mybatis - H2 Mapper实现
+ *
+ * @author haikuo.zhk
+ */
 @Mapper
-public interface ExampleH2Mapper extends ExampleMapper {
+public interface   ExampleH2Mapper extends ExampleMapper {
 
     @Select("SELECT * FROM tb_example ORDER BY last_modified DESC")
     @Results({
