@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.*;
 import java.util.List;
 
 /**
- * Mybatis - Sqlite  Mapper实现
+ * Mybatis - Sqlite Mapper实现
  *
  * @author haikuo.zhk
  */
