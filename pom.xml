@@ -29,7 +29,7 @@
         <lotus.orz.version>0.0.1-SNAPSHOT</lotus.orz.version>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mysql.dirver.version>5.1.34</mysql.dirver.version>
+        <mysql.dirver.version>8.0.16</mysql.dirver.version>
         <sqlite.dirver.version>3.21.0.1</sqlite.dirver.version>
         <h2.dirver.version>1.4.195</h2.dirver.version>
         <fastjson.version>1.2.60</fastjson.version>
