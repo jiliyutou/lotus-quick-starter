@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Data
 @Configuration
 @PropertySource(value = {"classpath:stage.properties", "classpath:lotus.properties"})
-public class
-LotusProperties {
+public class LotusProperties {
 
     @Value("${sys.current.orm}")
     private String currentOrm;
